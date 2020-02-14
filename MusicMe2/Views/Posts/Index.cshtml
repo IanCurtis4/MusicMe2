@@ -1,0 +1,121 @@
+﻿@model IEnumerable<MusicMe2.Post>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Midia)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        @{
+            var db = new Entities1();
+            var profileId = item.ProfileProfileId;
+            var profileName = db.ProfileSet.Find(profileId).Name;
+        }
+        @Html.Display(profileName)
+        <td>
+            @Html.DisplayFor(modelItem => item.Text)
+        </td>
+        <td>
+            <audio controls>
+                <source src="\UserMidia\@item.Midia" type="audio/mp3">
+            </audio>
+        </td>
+        <td>
+
+            @Html.ActionLink("Edit", "Edit", new { id = item.PostId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.PostId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PostId })
+            @Html.ActionLink("Comment", "Create", "Comments", new { id = item.PostId }, null)
+
+            @{
+                var userId = (int)Session["UserId"];
+                var likePost = item.Like.FirstOrDefault(p => p.ProfileProfileId == userId);
+            }
+            @item.Like.Count()
+            @if (likePost == null)
+            {
+                using (Html.BeginForm("Create", "Likes", new { id = item.PostId }, FormMethod.Post, null))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Like" class="btn btn-default" />
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                using (Html.BeginForm("Delete", "Likes", new { id = likePost.LikeId, postId = item.PostId }, FormMethod.Post, null))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Unlike" class="btn btn-default" />
+                        </div>
+                    </div>
+                }
+            }
+
+
+            @{
+                var sharePost = item.ShareSet.FirstOrDefault(p => p.ProfileProfileId == userId && p.PostPostId == item.PostId);
+            }
+
+            @if (sharePost == null)
+            {
+                using (Html.BeginForm("Create", "Shares", new { id = item.PostId }, FormMethod.Post, null))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Share" class="btn btn-default" />
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                var shareId = sharePost.ShareId;
+                var sharedBy = db.ProfileSet.Find(sharePost.ProfileProfileId).Name;
+                using (Html.BeginForm("Delete", "Shares", new { id = shareId, postId = item.PostId }, FormMethod.Post, null))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Unshare" class="btn btn-default" />
+                            <b>Shared by: @sharedBy</b>
+                        </div>
+                    </div>
+
+                }
+            }
+
+        </td>
+        <td>
+            @Html.Action("Index", "Comments", new { id = item.PostId })
+        </td>
+    </tr>
+    }
+    @Html.ActionLink("Amigos não-aceitos", "Index", "Friends", null, null)<br />
+    @Html.ActionLink("Amigos aceitos", "Accepted", "Friends", null, null)
+
+</table>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d8273ae4d3ab4b298cdd04cd2a67c431" Name="Diagram1" ZoomLevel="78">
+        <EntityTypeShape EntityType="Model.AspNetRoles" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUserClaims" Width="1.5" PointX="10.375" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUserLogins" Width="1.5" PointX="8.375" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AspNetUsers" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Comment" Width="1.5" PointX="7.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Friend" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Like" Width="1.5" PointX="14.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Music" Width="1.5" PointX="11.375" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Playlist" Width="1.5" PointX="15.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Post" Width="1.5" PointX="14.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Profile" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Share" Width="1.5" PointX="17.875" PointY="16.375" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CommentLike" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PostComment" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ProfileComment" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_MusicLike" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PlaylistLike" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ProfileLike" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_MusicShare" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ProfileMusic" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PlaylistShare" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ProfilePlaylist" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PostShare" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ProfilePost" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ProfileShare" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.AspNetUserRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PlaylistMusic" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_FriendSet_ToProfileDestiny" />
+        <AssociationConnector Association="Model.FK_FriendSet_ToProfileOrigin" />
+        <AssociationConnector Association="Model.PostLike" />
+        <AssociationConnector Association="Model.PostMusic" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

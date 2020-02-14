@@ -1,0 +1,42 @@
+﻿@model MusicMe2.Playlist
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Playlist</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupGroupId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupGroupId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfileSet.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfileSet.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PlaylistId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

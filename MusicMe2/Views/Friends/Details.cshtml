@@ -1,0 +1,42 @@
+﻿@model MusicMe2.Friend
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Friend</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Friended)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Friended)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfileDestinySet.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfileDestinySet.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfileOriginSet.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfileOriginSet.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FriendId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

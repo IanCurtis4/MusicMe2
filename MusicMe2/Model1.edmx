@@ -1,0 +1,1256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="AspNetRoles" EntityType="Model.Store.AspNetRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Model.Store.AspNetUserClaims" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Model.Store.AspNetUserLogins" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUsers" EntityType="Model.Store.AspNetUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="C__MigrationHistory" EntityType="Model.Store.C__MigrationHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CommentSet" EntityType="Model.Store.CommentSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FriendSet" EntityType="Model.Store.FriendSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LikeSet" EntityType="Model.Store.LikeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MusicSet" EntityType="Model.Store.MusicSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PlaylistSet" EntityType="Model.Store.PlaylistSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PostSet" EntityType="Model.Store.PostSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProfileSet" EntityType="Model.Store.ProfileSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ShareSet" EntityType="Model.Store.ShareSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Model.Store.AspNetUserRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PlaylistMusic" EntityType="Model.Store.PlaylistMusic" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Model.Store.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Model.Store.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommentLike" Association="Model.Store.FK_CommentLike">
+      <End Role="CommentSet" EntitySet="CommentSet" />
+      <End Role="LikeSet" EntitySet="LikeSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostComment" Association="Model.Store.FK_PostComment">
+      <End Role="PostSet" EntitySet="PostSet" />
+      <End Role="CommentSet" EntitySet="CommentSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileComment" Association="Model.Store.FK_ProfileComment">
+      <End Role="ProfileSet" EntitySet="ProfileSet" />
+      <End Role="CommentSet" EntitySet="CommentSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MusicLike" Association="Model.Store.FK_MusicLike">
+      <End Role="MusicSet" EntitySet="MusicSet" />
+      <End Role="LikeSet" EntitySet="LikeSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlaylistLike" Association="Model.Store.FK_PlaylistLike">
+      <End Role="PlaylistSet" EntitySet="PlaylistSet" />
+      <End Role="LikeSet" EntitySet="LikeSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileLike" Association="Model.Store.FK_ProfileLike">
+      <End Role="ProfileSet" EntitySet="ProfileSet" />
+      <End Role="LikeSet" EntitySet="LikeSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MusicShare" Association="Model.Store.FK_MusicShare">
+      <End Role="MusicSet" EntitySet="MusicSet" />
+      <End Role="ShareSet" EntitySet="ShareSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileMusic" Association="Model.Store.FK_ProfileMusic">
+      <End Role="ProfileSet" EntitySet="ProfileSet" />
+      <End Role="MusicSet" EntitySet="MusicSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlaylistShare" Association="Model.Store.FK_PlaylistShare">
+      <End Role="PlaylistSet" EntitySet="PlaylistSet" />
+      <End Role="ShareSet" EntitySet="ShareSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfilePlaylist" Association="Model.Store.FK_ProfilePlaylist">
+      <End Role="ProfileSet" EntitySet="ProfileSet" />
+      <End Role="PlaylistSet" EntitySet="PlaylistSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostShare" Association="Model.Store.FK_PostShare">
+      <End Role="PostSet" EntitySet="PostSet" />
+      <End Role="ShareSet" EntitySet="ShareSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfilePost" Association="Model.Store.FK_ProfilePost">
+      <End Role="ProfileSet" EntitySet="ProfileSet" />
+      <End Role="PostSet" EntitySet="PostSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileShare" Association="Model.Store.FK_ProfileShare">
+      <End Role="ProfileSet" EntitySet="ProfileSet" />
+      <End Role="ShareSet" EntitySet="ShareSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserRoles_AspNetRoles" Association="Model.Store.FK_AspNetUserRoles_AspNetRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AspNetUserRoles_AspNetUsers" Association="Model.Store.FK_AspNetUserRoles_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlaylistMusic_MusicSet" Association="Model.Store.FK_PlaylistMusic_MusicSet">
+      <End Role="MusicSet" EntitySet="MusicSet" />
+      <End Role="PlaylistMusic" EntitySet="PlaylistMusic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlaylistMusic_PlaylistSet" Association="Model.Store.FK_PlaylistMusic_PlaylistSet">
+      <End Role="PlaylistSet" EntitySet="PlaylistSet" />
+      <End Role="PlaylistMusic" EntitySet="PlaylistMusic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FriendSet_ToProfileDestiny" Association="Model.Store.FK_FriendSet_ToProfileDestiny">
+      <End Role="Profile" EntitySet="ProfileSet" />
+      <End Role="FriendSet" EntitySet="FriendSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FriendSet_ToProfileOrigin" Association="Model.Store.FK_FriendSet_ToProfileOrigin">
+      <End Role="Profile" EntitySet="ProfileSet" />
+      <End Role="FriendSet" EntitySet="FriendSet" />
+    </AssociationSet>
+    <AssociationSet Name="PostLike" Association="Model.Store.PostLike">
+      <End Role="Post" EntitySet="PostSet" />
+      <End Role="Like" EntitySet="LikeSet" />
+    </AssociationSet>
+    <AssociationSet Name="PostMusic" Association="Model.Store.PostMusic">
+      <End Role="Post" EntitySet="PostSet" />
+      <End Role="Music" EntitySet="MusicSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="ClaimType" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="ProviderKey" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" Nullable="true" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="ContextKey" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" Nullable="false" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="CommentSet">
+    <Key>
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Name="CommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Midia" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ProfileProfileId" Type="int" Nullable="false" />
+    <Property Name="PostPostId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="FriendSet">
+    <Key>
+      <PropertyRef Name="FriendId" />
+    </Key>
+    <Property Name="FriendId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Friended" Type="bit" Nullable="false" />
+    <Property Name="ProfileOriginId" Type="int" Nullable="false" />
+    <Property Name="ProfileDestinyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LikeSet">
+    <Key>
+      <PropertyRef Name="LikeId" />
+    </Key>
+    <Property Name="LikeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Liked" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProfileProfileId" Type="int" Nullable="false" />
+    <Property Name="MusicMusicId" Type="int" Nullable="true" />
+    <Property Name="PlaylistPlaylistId" Type="int" Nullable="true" />
+    <Property Name="CommentCommentId" Type="int" Nullable="true" />
+    <Property Name="PostPostId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="MusicSet">
+    <Key>
+      <PropertyRef Name="MusicId" />
+    </Key>
+    <Property Name="MusicId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Band" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Album" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Midia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProfileProfileId" Type="int" Nullable="false" />
+    <Property Name="Post_PostId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PlaylistSet">
+    <Key>
+      <PropertyRef Name="PlaylistId" />
+    </Key>
+    <Property Name="PlaylistId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProfileProfileId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PostSet">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Midia" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ProfileProfileId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ProfileSet">
+    <Key>
+      <PropertyRef Name="ProfileId" />
+    </Key>
+    <Property Name="ProfileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProfilePicture" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BirthDate" Type="datetime" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ShareSet">
+    <Key>
+      <PropertyRef Name="ShareId" />
+    </Key>
+    <Property Name="ShareId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProfileProfileId" Type="int" Nullable="false" />
+    <Property Name="MusicMusicId" Type="int" Nullable="true" />
+    <Property Name="PlaylistPlaylistId" Type="int" Nullable="true" />
+    <Property Name="PostPostId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="AspNetRoles_Id" />
+      <PropertyRef Name="AspNetUsers_Id" />
+    </Key>
+    <Property Name="AspNetRoles_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="AspNetUsers_Id" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="PlaylistMusic">
+    <Key>
+      <PropertyRef Name="MusicSet_MusicId" />
+      <PropertyRef Name="PlaylistSet_PlaylistId" />
+    </Key>
+    <Property Name="MusicSet_MusicId" Type="int" Nullable="false" />
+    <Property Name="PlaylistSet_PlaylistId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Model.Store.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Model.Store.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Model.Store.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Model.Store.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommentLike">
+    <End Role="CommentSet" Type="Model.Store.CommentSet" Multiplicity="0..1" />
+    <End Role="LikeSet" Type="Model.Store.LikeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CommentSet">
+        <PropertyRef Name="CommentId" />
+      </Principal>
+      <Dependent Role="LikeSet">
+        <PropertyRef Name="CommentCommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostComment">
+    <End Role="PostSet" Type="Model.Store.PostSet" Multiplicity="0..1" />
+    <End Role="CommentSet" Type="Model.Store.CommentSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostSet">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="CommentSet">
+        <PropertyRef Name="PostPostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileComment">
+    <End Role="ProfileSet" Type="Model.Store.ProfileSet" Multiplicity="1" />
+    <End Role="CommentSet" Type="Model.Store.CommentSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProfileSet">
+        <PropertyRef Name="ProfileId" />
+      </Principal>
+      <Dependent Role="CommentSet">
+        <PropertyRef Name="ProfileProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MusicLike">
+    <End Role="MusicSet" Type="Model.Store.MusicSet" Multiplicity="0..1" />
+    <End Role="LikeSet" Type="Model.Store.LikeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MusicSet">
+        <PropertyRef Name="MusicId" />
+      </Principal>
+      <Dependent Role="LikeSet">
+        <PropertyRef Name="MusicMusicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlaylistLike">
+    <End Role="PlaylistSet" Type="Model.Store.PlaylistSet" Multiplicity="0..1" />
+    <End Role="LikeSet" Type="Model.Store.LikeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlaylistSet">
+        <PropertyRef Name="PlaylistId" />
+      </Principal>
+      <Dependent Role="LikeSet">
+        <PropertyRef Name="PlaylistPlaylistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileLike">
+    <End Role="ProfileSet" Type="Model.Store.ProfileSet" Multiplicity="1" />
+    <End Role="LikeSet" Type="Model.Store.LikeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProfileSet">
+        <PropertyRef Name="ProfileId" />
+      </Principal>
+      <Dependent Role="LikeSet">
+        <PropertyRef Name="ProfileProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MusicShare">
+    <End Role="MusicSet" Type="Model.Store.MusicSet" Multiplicity="0..1" />
+    <End Role="ShareSet" Type="Model.Store.ShareSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MusicSet">
+        <PropertyRef Name="MusicId" />
+      </Principal>
+      <Dependent Role="ShareSet">
+        <PropertyRef Name="MusicMusicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileMusic">
+    <End Role="ProfileSet" Type="Model.Store.ProfileSet" Multiplicity="1" />
+    <End Role="MusicSet" Type="Model.Store.MusicSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProfileSet">
+        <PropertyRef Name="ProfileId" />
+      </Principal>
+      <Dependent Role="MusicSet">
+        <PropertyRef Name="ProfileProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlaylistShare">
+    <End Role="PlaylistSet" Type="Model.Store.PlaylistSet" Multiplicity="0..1" />
+    <End Role="ShareSet" Type="Model.Store.ShareSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlaylistSet">
+        <PropertyRef Name="PlaylistId" />
+      </Principal>
+      <Dependent Role="ShareSet">
+        <PropertyRef Name="PlaylistPlaylistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfilePlaylist">
+    <End Role="ProfileSet" Type="Model.Store.ProfileSet" Multiplicity="1" />
+    <End Role="PlaylistSet" Type="Model.Store.PlaylistSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProfileSet">
+        <PropertyRef Name="ProfileId" />
+      </Principal>
+      <Dependent Role="PlaylistSet">
+        <PropertyRef Name="ProfileProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostShare">
+    <End Role="PostSet" Type="Model.Store.PostSet" Multiplicity="0..1" />
+    <End Role="ShareSet" Type="Model.Store.ShareSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostSet">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="ShareSet">
+        <PropertyRef Name="PostPostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfilePost">
+    <End Role="ProfileSet" Type="Model.Store.ProfileSet" Multiplicity="0..1" />
+    <End Role="PostSet" Type="Model.Store.PostSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProfileSet">
+        <PropertyRef Name="ProfileId" />
+      </Principal>
+      <Dependent Role="PostSet">
+        <PropertyRef Name="ProfileProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileShare">
+    <End Role="ProfileSet" Type="Model.Store.ProfileSet" Multiplicity="1" />
+    <End Role="ShareSet" Type="Model.Store.ShareSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProfileSet">
+        <PropertyRef Name="ProfileId" />
+      </Principal>
+      <Dependent Role="ShareSet">
+        <PropertyRef Name="ProfileProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FriendSet_ToProfileDestiny">
+    <End Role="Profile" Type="Model.Store.ProfileSet" Multiplicity="1" />
+    <End Role="FriendSet" Type="Model.Store.FriendSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profile">
+        <PropertyRef Name="ProfileId" />
+      </Principal>
+      <Dependent Role="FriendSet">
+        <PropertyRef Name="ProfileDestinyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FriendSet_ToProfileOrigin">
+    <End Role="Profile" Type="Model.Store.ProfileSet" Multiplicity="1" />
+    <End Role="FriendSet" Type="Model.Store.FriendSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profile">
+        <PropertyRef Name="ProfileId" />
+      </Principal>
+      <Dependent Role="FriendSet">
+        <PropertyRef Name="ProfileOriginId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PostLike">
+    <End Role="Post" Type="Model.Store.PostSet" Multiplicity="0..1" />
+    <End Role="Like" Type="Model.Store.LikeSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="Like">
+        <PropertyRef Name="PostPostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PostMusic">
+    <End Role="Post" Type="Model.Store.PostSet" Multiplicity="0..1" />
+    <End Role="Music" Type="Model.Store.MusicSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="Music">
+        <PropertyRef Name="Post_PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserRoles_AspNetRoles">
+    <End Role="AspNetRoles" Type="Model.Store.AspNetRoles" Multiplicity="1" />
+    <End Role="AspNetUserRoles" Type="Model.Store.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="AspNetRoles_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AspNetUserRoles_AspNetUsers">
+    <End Role="AspNetUserRoles" Type="Model.Store.AspNetUserRoles" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Model.Store.AspNetUsers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="AspNetUsers_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlaylistMusic_MusicSet">
+    <End Role="MusicSet" Type="Model.Store.MusicSet" Multiplicity="1" />
+    <End Role="PlaylistMusic" Type="Model.Store.PlaylistMusic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MusicSet">
+        <PropertyRef Name="MusicId" />
+      </Principal>
+      <Dependent Role="PlaylistMusic">
+        <PropertyRef Name="MusicSet_MusicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlaylistMusic_PlaylistSet">
+    <End Role="PlaylistMusic" Type="Model.Store.PlaylistMusic" Multiplicity="*" />
+    <End Role="PlaylistSet" Type="Model.Store.PlaylistSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="PlaylistSet">
+        <PropertyRef Name="PlaylistId" />
+      </Principal>
+      <Dependent Role="PlaylistMusic">
+        <PropertyRef Name="PlaylistSet_PlaylistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Midia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="true" />
+          <Property Name="ProfileProfileId" Type="Int32" Nullable="false" />
+          <Property Name="PostPostId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="LikeSet" Relationship="Self.FK_CommentLike" FromRole="CommentSet" ToRole="LikeSet" />
+          <NavigationProperty Name="PostSet" Relationship="Self.FK_PostComment" FromRole="CommentSet" ToRole="PostSet" />
+          <NavigationProperty Name="ProfileSet" Relationship="Self.FK_ProfileComment" FromRole="CommentSet" ToRole="ProfileSet" />
+        </EntityType>
+        <EntityType Name="Friend">
+          <Key>
+            <PropertyRef Name="FriendId" />
+          </Key>
+          <Property Name="FriendId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Friended" Type="Boolean" Nullable="false" />
+          <Property Name="ProfileOriginId" Type="Int32" Nullable="false" />
+          <Property Name="ProfileDestinyId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ProfileDestinySet" Relationship="Model.FK_FriendSet_ToProfileDestiny" FromRole="FriendSet" ToRole="Profile" />
+          <NavigationProperty Name="ProfileOriginSet" Relationship="Model.FK_FriendSet_ToProfileOrigin" FromRole="FriendSet" ToRole="Profile" />
+        </EntityType>
+        <EntityType Name="Like">
+          <Key>
+            <PropertyRef Name="LikeId" />
+          </Key>
+          <Property Name="LikeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Liked" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProfileProfileId" Type="Int32" Nullable="false" />
+          <Property Name="MusicMusicId" Type="Int32" />
+          <Property Name="PlaylistPlaylistId" Type="Int32" />
+          <Property Name="CommentCommentId" Type="Int32" />
+          <NavigationProperty Name="CommentSet" Relationship="Self.FK_CommentLike" FromRole="LikeSet" ToRole="CommentSet" />
+          <NavigationProperty Name="MusicSet" Relationship="Self.FK_MusicLike" FromRole="LikeSet" ToRole="MusicSet" />
+          <NavigationProperty Name="PlaylistSet" Relationship="Self.FK_PlaylistLike" FromRole="LikeSet" ToRole="PlaylistSet" />
+          <NavigationProperty Name="ProfileSet" Relationship="Self.FK_ProfileLike" FromRole="LikeSet" ToRole="ProfileSet" />
+          <NavigationProperty Name="Post" Relationship="Model.PostLike" FromRole="Like" ToRole="Post" />
+          <Property Name="PostPostId" Type="Int32" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Music">
+          <Key>
+            <PropertyRef Name="MusicId" />
+          </Key>
+          <Property Name="MusicId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Band" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Album" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Midia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProfileProfileId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LikeSet" Relationship="Self.FK_MusicLike" FromRole="MusicSet" ToRole="LikeSet" />
+          <NavigationProperty Name="ShareSet" Relationship="Self.FK_MusicShare" FromRole="MusicSet" ToRole="ShareSet" />
+          <NavigationProperty Name="ProfileSet" Relationship="Self.FK_ProfileMusic" FromRole="MusicSet" ToRole="ProfileSet" />
+          <NavigationProperty Name="PlaylistSet" Relationship="Self.PlaylistMusic" FromRole="MusicSet" ToRole="PlaylistSet" />
+          <NavigationProperty Name="Post" Relationship="Model.PostMusic" FromRole="Music" ToRole="Post" />
+        </EntityType>
+        <EntityType Name="Playlist">
+          <Key>
+            <PropertyRef Name="PlaylistId" />
+          </Key>
+          <Property Name="PlaylistId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProfileProfileId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="LikeSet" Relationship="Self.FK_PlaylistLike" FromRole="PlaylistSet" ToRole="LikeSet" />
+          <NavigationProperty Name="ShareSet" Relationship="Self.FK_PlaylistShare" FromRole="PlaylistSet" ToRole="ShareSet" />
+          <NavigationProperty Name="ProfileSet" Relationship="Self.FK_ProfilePlaylist" FromRole="PlaylistSet" ToRole="ProfileSet" />
+          <NavigationProperty Name="MusicSet" Relationship="Self.PlaylistMusic" FromRole="PlaylistSet" ToRole="MusicSet" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="PostId" />
+          </Key>
+          <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Midia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProfileProfileId" Type="Int32" />
+          <NavigationProperty Name="CommentSet" Relationship="Self.FK_PostComment" FromRole="PostSet" ToRole="CommentSet" />
+          <NavigationProperty Name="ShareSet" Relationship="Self.FK_PostShare" FromRole="PostSet" ToRole="ShareSet" />
+          <NavigationProperty Name="ProfileSet" Relationship="Self.FK_ProfilePost" FromRole="PostSet" ToRole="ProfileSet" />
+          <NavigationProperty Name="Like" Relationship="Model.PostLike" FromRole="Post" ToRole="Like" />
+          <NavigationProperty Name="Music" Relationship="Model.PostMusic" FromRole="Post" ToRole="Music" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="ProfileId" />
+          </Key>
+          <Property Name="ProfileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProfilePicture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CommentSet" Relationship="Self.FK_ProfileComment" FromRole="ProfileSet" ToRole="CommentSet" />
+          <NavigationProperty Name="LikeSet" Relationship="Self.FK_ProfileLike" FromRole="ProfileSet" ToRole="LikeSet" />
+          <NavigationProperty Name="MusicSet" Relationship="Self.FK_ProfileMusic" FromRole="ProfileSet" ToRole="MusicSet" />
+          <NavigationProperty Name="PlaylistSet" Relationship="Self.FK_ProfilePlaylist" FromRole="ProfileSet" ToRole="PlaylistSet" />
+          <NavigationProperty Name="PostSet" Relationship="Self.FK_ProfilePost" FromRole="ProfileSet" ToRole="PostSet" />
+          <NavigationProperty Name="ShareSet" Relationship="Self.FK_ProfileShare" FromRole="ProfileSet" ToRole="ShareSet" />
+          <NavigationProperty Name="FriendDestinySet" Relationship="Model.FK_FriendSet_ToProfileDestiny" FromRole="Profile" ToRole="FriendSet" />
+          <NavigationProperty Name="FriendOriginSet" Relationship="Model.FK_FriendSet_ToProfileOrigin" FromRole="Profile" ToRole="FriendSet" />
+        </EntityType>
+        <EntityType Name="Share">
+          <Key>
+            <PropertyRef Name="ShareId" />
+          </Key>
+          <Property Name="ShareId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProfileProfileId" Type="Int32" Nullable="false" />
+          <Property Name="MusicMusicId" Type="Int32" />
+          <Property Name="PlaylistPlaylistId" Type="Int32" />
+          <Property Name="PostPostId" Type="Int32" />
+          <NavigationProperty Name="MusicSet" Relationship="Self.FK_MusicShare" FromRole="ShareSet" ToRole="MusicSet" />
+          <NavigationProperty Name="PlaylistSet" Relationship="Self.FK_PlaylistShare" FromRole="ShareSet" ToRole="PlaylistSet" />
+          <NavigationProperty Name="PostSet" Relationship="Self.FK_PostShare" FromRole="ShareSet" ToRole="PostSet" />
+          <NavigationProperty Name="ProfileSet" Relationship="Self.FK_ProfileShare" FromRole="ShareSet" ToRole="ProfileSet" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommentLike">
+          <End Role="CommentSet" Type="Model.Comment" Multiplicity="0..1" />
+          <End Role="LikeSet" Type="Model.Like" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommentSet">
+              <PropertyRef Name="CommentId" />
+            </Principal>
+            <Dependent Role="LikeSet">
+              <PropertyRef Name="CommentCommentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostComment">
+          <End Role="PostSet" Type="Model.Post" Multiplicity="0..1" />
+          <End Role="CommentSet" Type="Model.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostSet">
+              <PropertyRef Name="PostId" />
+            </Principal>
+            <Dependent Role="CommentSet">
+              <PropertyRef Name="PostPostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProfileComment">
+          <End Role="ProfileSet" Type="Model.Profile" Multiplicity="1" />
+          <End Role="CommentSet" Type="Model.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProfileSet">
+              <PropertyRef Name="ProfileId" />
+            </Principal>
+            <Dependent Role="CommentSet">
+              <PropertyRef Name="ProfileProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MusicLike">
+          <End Role="MusicSet" Type="Model.Music" Multiplicity="0..1" />
+          <End Role="LikeSet" Type="Model.Like" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MusicSet">
+              <PropertyRef Name="MusicId" />
+            </Principal>
+            <Dependent Role="LikeSet">
+              <PropertyRef Name="MusicMusicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PlaylistLike">
+          <End Role="PlaylistSet" Type="Model.Playlist" Multiplicity="0..1" />
+          <End Role="LikeSet" Type="Model.Like" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaylistSet">
+              <PropertyRef Name="PlaylistId" />
+            </Principal>
+            <Dependent Role="LikeSet">
+              <PropertyRef Name="PlaylistPlaylistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProfileLike">
+          <End Role="ProfileSet" Type="Model.Profile" Multiplicity="1" />
+          <End Role="LikeSet" Type="Model.Like" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProfileSet">
+              <PropertyRef Name="ProfileId" />
+            </Principal>
+            <Dependent Role="LikeSet">
+              <PropertyRef Name="ProfileProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MusicShare">
+          <End Role="MusicSet" Type="Model.Music" Multiplicity="0..1" />
+          <End Role="ShareSet" Type="Model.Share" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MusicSet">
+              <PropertyRef Name="MusicId" />
+            </Principal>
+            <Dependent Role="ShareSet">
+              <PropertyRef Name="MusicMusicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProfileMusic">
+          <End Role="ProfileSet" Type="Model.Profile" Multiplicity="1" />
+          <End Role="MusicSet" Type="Model.Music" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProfileSet">
+              <PropertyRef Name="ProfileId" />
+            </Principal>
+            <Dependent Role="MusicSet">
+              <PropertyRef Name="ProfileProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PlaylistShare">
+          <End Role="PlaylistSet" Type="Model.Playlist" Multiplicity="0..1" />
+          <End Role="ShareSet" Type="Model.Share" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaylistSet">
+              <PropertyRef Name="PlaylistId" />
+            </Principal>
+            <Dependent Role="ShareSet">
+              <PropertyRef Name="PlaylistPlaylistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProfilePlaylist">
+          <End Role="ProfileSet" Type="Model.Profile" Multiplicity="1" />
+          <End Role="PlaylistSet" Type="Model.Playlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProfileSet">
+              <PropertyRef Name="ProfileId" />
+            </Principal>
+            <Dependent Role="PlaylistSet">
+              <PropertyRef Name="ProfileProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PostShare">
+          <End Role="PostSet" Type="Model.Post" Multiplicity="0..1" />
+          <End Role="ShareSet" Type="Model.Share" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PostSet">
+              <PropertyRef Name="PostId" />
+            </Principal>
+            <Dependent Role="ShareSet">
+              <PropertyRef Name="PostPostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProfilePost">
+          <End Role="ProfileSet" Type="Model.Profile" Multiplicity="0..1" />
+          <End Role="PostSet" Type="Model.Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProfileSet">
+              <PropertyRef Name="ProfileId" />
+            </Principal>
+            <Dependent Role="PostSet">
+              <PropertyRef Name="ProfileProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProfileShare">
+          <End Role="ProfileSet" Type="Model.Profile" Multiplicity="1" />
+          <End Role="ShareSet" Type="Model.Share" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProfileSet">
+              <PropertyRef Name="ProfileId" />
+            </Principal>
+            <Dependent Role="ShareSet">
+              <PropertyRef Name="ProfileProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+        </Association>
+        <Association Name="PlaylistMusic">
+          <End Role="MusicSet" Type="Model.Music" Multiplicity="*" />
+          <End Role="PlaylistSet" Type="Model.Playlist" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="CommentSet" EntityType="Model.Comment" />
+          <EntitySet Name="FriendSet" EntityType="Model.Friend" />
+          <EntitySet Name="LikeSet" EntityType="Model.Like" />
+          <EntitySet Name="MusicSet" EntityType="Model.Music" />
+          <EntitySet Name="PlaylistSet" EntityType="Model.Playlist" />
+          <EntitySet Name="PostSet" EntityType="Model.Post" />
+          <EntitySet Name="ProfileSet" EntityType="Model.Profile" />
+          <EntitySet Name="ShareSet" EntityType="Model.Share" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommentLike" Association="Self.FK_CommentLike">
+            <End Role="CommentSet" EntitySet="CommentSet" />
+            <End Role="LikeSet" EntitySet="LikeSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostComment" Association="Self.FK_PostComment">
+            <End Role="PostSet" EntitySet="PostSet" />
+            <End Role="CommentSet" EntitySet="CommentSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProfileComment" Association="Self.FK_ProfileComment">
+            <End Role="ProfileSet" EntitySet="ProfileSet" />
+            <End Role="CommentSet" EntitySet="CommentSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MusicLike" Association="Self.FK_MusicLike">
+            <End Role="MusicSet" EntitySet="MusicSet" />
+            <End Role="LikeSet" EntitySet="LikeSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PlaylistLike" Association="Self.FK_PlaylistLike">
+            <End Role="PlaylistSet" EntitySet="PlaylistSet" />
+            <End Role="LikeSet" EntitySet="LikeSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProfileLike" Association="Self.FK_ProfileLike">
+            <End Role="ProfileSet" EntitySet="ProfileSet" />
+            <End Role="LikeSet" EntitySet="LikeSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MusicShare" Association="Self.FK_MusicShare">
+            <End Role="MusicSet" EntitySet="MusicSet" />
+            <End Role="ShareSet" EntitySet="ShareSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProfileMusic" Association="Self.FK_ProfileMusic">
+            <End Role="ProfileSet" EntitySet="ProfileSet" />
+            <End Role="MusicSet" EntitySet="MusicSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PlaylistShare" Association="Self.FK_PlaylistShare">
+            <End Role="PlaylistSet" EntitySet="PlaylistSet" />
+            <End Role="ShareSet" EntitySet="ShareSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProfilePlaylist" Association="Self.FK_ProfilePlaylist">
+            <End Role="ProfileSet" EntitySet="ProfileSet" />
+            <End Role="PlaylistSet" EntitySet="PlaylistSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PostShare" Association="Self.FK_PostShare">
+            <End Role="PostSet" EntitySet="PostSet" />
+            <End Role="ShareSet" EntitySet="ShareSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProfilePost" Association="Self.FK_ProfilePost">
+            <End Role="ProfileSet" EntitySet="ProfileSet" />
+            <End Role="PostSet" EntitySet="PostSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProfileShare" Association="Self.FK_ProfileShare">
+            <End Role="ProfileSet" EntitySet="ProfileSet" />
+            <End Role="ShareSet" EntitySet="ShareSet" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <AssociationSet Name="PlaylistMusic" Association="Self.PlaylistMusic">
+            <End Role="MusicSet" EntitySet="MusicSet" />
+            <End Role="PlaylistSet" EntitySet="PlaylistSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FriendSet_ToProfileDestiny" Association="Model.FK_FriendSet_ToProfileDestiny">
+            <End Role="Profile" EntitySet="ProfileSet" />
+            <End Role="FriendSet" EntitySet="FriendSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FriendSet_ToProfileOrigin" Association="Model.FK_FriendSet_ToProfileOrigin">
+            <End Role="Profile" EntitySet="ProfileSet" />
+            <End Role="FriendSet" EntitySet="FriendSet" />
+          </AssociationSet>
+          <AssociationSet Name="PostLike" Association="Model.PostLike">
+            <End Role="Post" EntitySet="PostSet" />
+            <End Role="Like" EntitySet="LikeSet" />
+          </AssociationSet>
+          <AssociationSet Name="PostMusic" Association="Model.PostMusic">
+            <End Role="Post" EntitySet="PostSet" />
+            <End Role="Music" EntitySet="MusicSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_FriendSet_ToProfileDestiny">
+          <End Type="Model.Profile" Role="Profile" Multiplicity="1" />
+          <End Type="Model.Friend" Role="FriendSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="ProfileId" />
+            </Principal>
+            <Dependent Role="FriendSet">
+              <PropertyRef Name="ProfileDestinyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FriendSet_ToProfileOrigin">
+          <End Type="Model.Profile" Role="Profile" Multiplicity="1" />
+          <End Type="Model.Friend" Role="FriendSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="ProfileId" />
+            </Principal>
+            <Dependent Role="FriendSet">
+              <PropertyRef Name="ProfileOriginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PostLike">
+          <End Type="Model.Post" Role="Post" Multiplicity="0..1" />
+          <End Type="Model.Like" Role="Like" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="PostId" />
+            </Principal>
+            <Dependent Role="Like">
+              <PropertyRef Name="PostPostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PostMusic">
+          <End Type="Model.Post" Role="Post" Multiplicity="0..1" />
+          <End Type="Model.Music" Role="Music" Multiplicity="0..1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities1">
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetRoles)">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUserClaims)">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUserLogins)">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUsers)">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.C__MigrationHistory)">
+        <MappingFragment StoreEntitySet="C__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommentSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Comment)">
+        <MappingFragment StoreEntitySet="CommentSet">
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Midia" ColumnName="Midia" />
+          <ScalarProperty Name="ProfileProfileId" ColumnName="ProfileProfileId" />
+          <ScalarProperty Name="PostPostId" ColumnName="PostPostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FriendSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Friend)">
+        <MappingFragment StoreEntitySet="FriendSet">
+          <ScalarProperty Name="FriendId" ColumnName="FriendId" />
+          <ScalarProperty Name="Friended" ColumnName="Friended" />
+          <ScalarProperty Name="ProfileOriginId" ColumnName="ProfileOriginId" />
+          <ScalarProperty Name="ProfileDestinyId" ColumnName="ProfileDestinyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LikeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Like)">
+        <MappingFragment StoreEntitySet="LikeSet">
+          <ScalarProperty Name="LikeId" ColumnName="LikeId" />
+          <ScalarProperty Name="Liked" ColumnName="Liked" />
+          <ScalarProperty Name="ProfileProfileId" ColumnName="ProfileProfileId" />
+          <ScalarProperty Name="MusicMusicId" ColumnName="MusicMusicId" />
+          <ScalarProperty Name="PlaylistPlaylistId" ColumnName="PlaylistPlaylistId" />
+          <ScalarProperty Name="CommentCommentId" ColumnName="CommentCommentId" />
+          <ScalarProperty Name="PostPostId" ColumnName="PostPostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MusicSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Music)">
+        <MappingFragment StoreEntitySet="MusicSet">
+          <ScalarProperty Name="MusicId" ColumnName="MusicId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Band" ColumnName="Band" />
+          <ScalarProperty Name="Album" ColumnName="Album" />
+          <ScalarProperty Name="Midia" ColumnName="Midia" />
+          <ScalarProperty Name="ProfileProfileId" ColumnName="ProfileProfileId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlaylistSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Playlist)">
+        <MappingFragment StoreEntitySet="PlaylistSet">
+          <ScalarProperty Name="PlaylistId" ColumnName="PlaylistId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProfileProfileId" ColumnName="ProfileProfileId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Post)">
+        <MappingFragment StoreEntitySet="PostSet">
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Midia" ColumnName="Midia" />
+          <ScalarProperty Name="ProfileProfileId" ColumnName="ProfileProfileId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProfileSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Profile)">
+        <MappingFragment StoreEntitySet="ProfileSet">
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShareSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Share)">
+        <MappingFragment StoreEntitySet="ShareSet">
+          <ScalarProperty Name="ShareId" ColumnName="ShareId" />
+          <ScalarProperty Name="ProfileProfileId" ColumnName="ProfileProfileId" />
+          <ScalarProperty Name="MusicMusicId" ColumnName="MusicMusicId" />
+          <ScalarProperty Name="PlaylistPlaylistId" ColumnName="PlaylistPlaylistId" />
+          <ScalarProperty Name="PostPostId" ColumnName="PostPostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="Model.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="AspNetRoles_Id" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="AspNetUsers_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PlaylistMusic" TypeName="Model.PlaylistMusic" StoreEntitySet="PlaylistMusic">
+      <EndProperty Name="MusicSet">
+        <ScalarProperty Name="MusicId" ColumnName="MusicSet_MusicId" />
+      </EndProperty>
+      <EndProperty Name="PlaylistSet">
+        <ScalarProperty Name="PlaylistId" ColumnName="PlaylistSet_PlaylistId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PostMusic" TypeName="Model.PostMusic" StoreEntitySet="MusicSet">
+      <EndProperty Name="Post">
+        <ScalarProperty Name="PostId" ColumnName="Post_PostId" />
+      </EndProperty>
+      <EndProperty Name="Music">
+        <ScalarProperty Name="MusicId" ColumnName="MusicId" />
+      </EndProperty>
+      <Condition ColumnName="Post_PostId" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
